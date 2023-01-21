@@ -1,21 +1,16 @@
-import React, {Component} from 'react';
+import React, {  Component } from 'react';
 import NameInput from './NameInput';
 import LinkInput from './LinkInputs';
 import AddSection from './addSection';
-import EditResume from './EditResume';
 
-class ResumePage extends Component {
+class EditResume extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     render() {
-
         return (
-
-            <div className='flex h-full justify-center'>
-                <div className='basis-3/6 min-h-[74vh] bg-white border-[10px] border-stone-300 border-double'>
-
+            <div className='h-full w-full'>
                     {/* this area will contain the header part of the resume */}
                     <div className="flex gap-2 justify-center font-[CMUSerifRoman] mt-2">
                         <NameInput placeholder="Jake..." height="max-h-min" id="first-name" text="text-7xl" />
@@ -77,11 +72,9 @@ class ResumePage extends Component {
                             </div>
                         </div>
                     </div>
-                    
-                </div>
             </div>
         )
     }
 }
 
-export default ResumePage
+export default EditResume
