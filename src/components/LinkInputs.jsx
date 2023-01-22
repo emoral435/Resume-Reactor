@@ -23,7 +23,7 @@ class LinkInput extends Component {
             }
           }
         return (
-            <input type="text" className={'outline-none w-32 ' + this.props.height + " " + this.props.text} autoComplete="off" id={this.props.id} placeholder={this.props.placeholder} data-links onChange={onChange}/>
+            <input value={this.props.nameValue} type="text" className={'outline-none w-32 ' + this.props.height + " " + this.props.text} autoComplete="off" id={this.props.id} placeholder={this.props.placeholder} data-links onChange={onChange}/>
         )
     }
 }

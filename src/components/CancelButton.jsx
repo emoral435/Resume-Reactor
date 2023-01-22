@@ -6,8 +6,10 @@ class CancelButton extends Component {
     }
 
     render() {
+        let id = this.props.id
+
         return (
-            <button className='bg-[#d64937] hover:bg-[#b73f2f] text-white text-xl rounded-lg px-6 py-3' onClick={this.props.cancel}>
+            <button className='bg-[#d64937] hover:bg-[#b73f2f] text-white text-xl rounded-lg px-6 py-3' type="button" onClick={this.props.cancel}>
                 Cancel
             </button>
         )
