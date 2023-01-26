@@ -19,7 +19,7 @@ class EducationForm extends Component {
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor={'eduLocation'}>Location</label>
-                        <input type="text" id={'eduLocation'} className='outline-none w-16' placeholder='Chicago...' autoComplete='off' required/>
+                        <input type="text" id={'eduLocation'} className='outline-none w-16 text-right' placeholder='Chicago...' autoComplete='off' required/>
                     </div>
                 </div>
                 <div className='flex justify-between'>
@@ -29,12 +29,12 @@ class EducationForm extends Component {
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor={'eduGrad'}>Graduation Date / Graduated</label>
-                        <div className='flex justify-end'><input type="text" id={'eduGrad'} className='outline-none w-40' placeholder='Aug 2020 - May 2024...' autoComplete='off' required/></div>
+                        <div className='flex justify-end'><input type="text" id={'eduGrad'} className='outline-none w-40 text-right' placeholder='Aug 2020 - May 2024...' autoComplete='off' required/></div>
                     </div>
                 </div>
                 <div className='my-2 flex gap-4'>
                     <CancelButton cancel={CancelEdu}/>
-                    <AddSection text="+ Submit" typ="button" add={this.props.addEduInfo}/>
+                    <AddSection text="+ Submit" type="button" add={this.props.addEduInfo}/>
                 </div>
             </form>
         )

@@ -4,8 +4,12 @@ import LinkInput from './LinkInputs';
 import AddSection from './addSection';
 import EducationForm from './EducationForm';
 import { eduInfo, eduFactory } from '../funfunfunctions/educationInfo';
-import LoadingEduInfo from './LoadingEduInfo';
-
+import LoadingInfo from './LoadingInfo';
+import TechForm from './TechForm';
+import submitTech from '../funfunfunctions/submitTech';
+import deleteTech from '../funfunfunctions/deleteTech';
+import ExperienceForm from './experienceForm';
+import Popup from '../funfunfunctions/FormPopup';
 class EditResume extends Component {
     constructor(props) {
         super(props);
@@ -15,8 +19,6 @@ class EditResume extends Component {
     }
 
     render() {
-        const eduArray = []
-
         let deleteEduInfo = (e) => {
             let target = e.target.parentNode
             eduInfo.splice(target.dataset.schools, 1)
@@ -24,10 +26,13 @@ class EditResume extends Component {
                 numEdu: this.state.numEdu - 1
             })
         }
-
+        const eduArray = []
+        
         for (let i = 0; i < this.state.numEdu; i++) {
-            eduArray.push(<LoadingEduInfo deleteEduInfo={deleteEduInfo} text={eduInfo[i].uni} dataSchools={i} key={i} number={i} />)
+            eduArray.push(<LoadingInfo deleteInfo={deleteEduInfo} text={eduInfo[i].uni} dataSchools={i} key={i} number={i} />)
         }
+
+
 
         
         let addFN = () => {
@@ -38,6 +43,7 @@ class EditResume extends Component {
         }
         
         let submitEdu = () => {
+            console.log('what')
             let uni = document.getElementById('eduSchool')
             let grad = document.getElementById('eduGrad')
             let location = document.getElementById('eduLocation')
@@ -101,7 +107,8 @@ class EditResume extends Component {
                                     <div className='text-[1.4rem]'>E</div>
                                     <div className='text-[1rem] flex items-center'>XPERIENCE</div>
                                 </div>
-                                <AddSection text="+ Experience" />
+                                <ExperienceForm />
+                                <AddSection text="+ Experience" id="addExp" add={() => Popup('addExp', 'expForm')}/>
                             </div>
 
                             {/* this is the project section for the page */}
@@ -121,7 +128,9 @@ class EditResume extends Component {
                                     <div className='text-[1.4rem]'>S</div>
                                     <div className='text-[1rem] flex items-center'>KILLS</div>
                                 </div>
-                                <AddSection text="+ Technical Skill" />
+                                <LoadingInfo text='Tech Skills' hide='hidden' id='loaded-tech-skills' deleteInfo={deleteTech}/>
+                                <TechForm submitTech={submitTech}/>
+                                <AddSection type="button" text="+ Technical Skill" add={() => Popup('addTech', 'techForm')} id='addTech'/>
                             </div>
                         </div>
                     </div>

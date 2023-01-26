@@ -2,12 +2,13 @@
 
 let expInfo = []
 
-let expFactory = (uni, location, major, grad) => {
+let expFactory = (jobTitle, dateWorked, company, area, ...bulletPoints) => {
     return {
-        uni,
-        location,
-        major,
-        grad
+        jobTitle,
+        dateWorked,
+        company,
+        area,
+        bullets : bulletPoints
     }
 }
 
