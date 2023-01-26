@@ -8,7 +8,7 @@ class AddSection extends Component {
     render() {
         let id = this.props.id
         return (
-            <button className='bg-[#455265] hover:bg-[#1e2530] text-white text-xl rounded-lg px-6 py-3' onClick={this.props.add} id={this.props.id}>
+            <button className='bg-[#455265] hover:bg-[#1e2530] text-white text-xl rounded-lg px-6 py-3' type={this.props.type} onClick={this.props.add} id={this.props.id}>
                 {this.props.text}
             </button>
         )

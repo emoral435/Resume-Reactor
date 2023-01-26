@@ -34,7 +34,7 @@ class EducationForm extends Component {
                 </div>
                 <div className='my-2 flex gap-4'>
                     <CancelButton cancel={CancelEdu}/>
-                    <AddSection text="+ Submit" add={this.props.addEduInfo}/>
+                    <AddSection text="+ Submit" typ="button" add={this.props.addEduInfo}/>
                 </div>
             </form>
         )

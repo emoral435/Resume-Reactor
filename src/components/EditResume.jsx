@@ -4,6 +4,7 @@ import LinkInput from './LinkInputs';
 import AddSection from './addSection';
 import EducationForm from './EducationForm';
 import { eduInfo, eduFactory } from '../funfunfunctions/educationInfo';
+import LoadingEduInfo from './LoadingEduInfo';
 
 class EditResume extends Component {
     constructor(props) {
@@ -14,23 +15,28 @@ class EditResume extends Component {
     }
 
     render() {
-        // const eduArray = []
+        const eduArray = []
 
-        // for (let i = 0; i < this.state.numEdu; i++) {
-        //     eduArray.push(<EducationForm key={i} number={i} />)
-        // }
+        let deleteEduInfo = (e) => {
+            let target = e.target.parentNode
+            eduInfo.splice(target.dataset.schools, 1)
+            this.setState({
+                numEdu: this.state.numEdu - 1
+            })
+        }
 
-        // this.setState({
-        //     numEdu: this.state.numEdu + 1
-        // })
+        for (let i = 0; i < this.state.numEdu; i++) {
+            eduArray.push(<LoadingEduInfo deleteEduInfo={deleteEduInfo} text={eduInfo[i].uni} dataSchools={i} key={i} number={i} />)
+        }
 
+        
         let addFN = () => {
             let education = document.getElementById('addEducation')
             education.classList.add('hidden')
             let form = document.getElementById('eduForm')
             form.classList.remove('hidden')
         }
-
+        
         let submitEdu = () => {
             let uni = document.getElementById('eduSchool')
             let grad = document.getElementById('eduGrad')
@@ -47,6 +53,9 @@ class EditResume extends Component {
                 grad.value = ''
                 let form = document.getElementById('eduForm')
                 form.classList.add('hidden')
+                this.setState({
+                    numEdu: this.state.numEdu + 1
+                })
             }
         }
 
@@ -81,7 +90,7 @@ class EditResume extends Component {
                                     <div className='text-[1rem] flex items-center'>DUCATION</div>
                                 </div>
                                 <div>
-                                    {/* {eduArray} */}
+                                    {eduArray}
                                 </div>
                                 <EducationForm addEduInfo={submitEdu}/>
                                 <AddSection text="+ Education" add={addFN} id="addEducation"/>
