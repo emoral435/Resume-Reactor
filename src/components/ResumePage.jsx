@@ -12,7 +12,12 @@ class ResumePage extends Component {
 
             <div className='flex h-full justify-center'>
                 <div className='basis-3/6 min-h-[74vh] bg-white border-[10px] border-stone-300 border-double' id='toggleResume'>
-                    <EditResume />
+                    {
+                        this.props.currState && <EditResume />
+                    }
+                    {
+                        this.props.currState && <div></div>
+                    }
                 </div>
             </div>
         )

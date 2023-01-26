@@ -10,7 +10,7 @@ class EditResume extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            numEdu : 0
+            numEdu : eduInfo.length
         }
     }
 
@@ -46,7 +46,6 @@ class EditResume extends Component {
                 let education = document.getElementById('addEducation')
                 education.classList.remove('hidden')
                 eduInfo.push(eduFactory(uni.value, location.value, major.value, grad.value))
-                console.log(eduInfo)
                 uni.value =''
                 location.value = ''
                 major.value = ''
