@@ -54,7 +54,7 @@ class ExperienceForm extends Component {
                 </div>
                 <div className='my-2 flex gap-4'>
                     <CancelButton cancel={CancelExp}/>
-                    <AddSection text="+ Submit" type="button" />
+                    <AddSection text="+ Submit" type="button" add={this.props.submit}/>
                 </div>
             </form>
         )

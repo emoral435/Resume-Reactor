@@ -10,6 +10,8 @@ import submitTech from '../funfunfunctions/submitTech';
 import deleteTech from '../funfunfunctions/deleteTech';
 import ExperienceForm from './experienceForm';
 import Popup from '../funfunfunctions/FormPopup';
+import { expFactory, expInfo } from '../funfunfunctions/experienceInfo';
+import CancelExp from '../funfunfunctions/CancelExp';
 class EditResume extends Component {
     constructor(props) {
         super(props);
@@ -43,7 +45,6 @@ class EditResume extends Component {
         }
         
         let submitEdu = () => {
-            console.log('what')
             let uni = document.getElementById('eduSchool')
             let grad = document.getElementById('eduGrad')
             let location = document.getElementById('eduLocation')
@@ -62,6 +63,16 @@ class EditResume extends Component {
                     numEdu: this.state.numEdu + 1
                 })
             }
+        }
+
+        let submitExp = () => {
+            const bulletValues = []
+            document.querySelectorAll('[data-bullet-points]').forEach ( node => {
+                bulletValues.push(node.value)
+            })
+            expInfo.push(expFactory(document.getElementById('job-title'), document.getElementById('date-worked'), document.getElementById('company'), document.getElementById('location-experience'), bulletValues))
+            CancelExp()
+            console.log(expInfo)
         }
 
         return (
@@ -107,7 +118,7 @@ class EditResume extends Component {
                                     <div className='text-[1.4rem]'>E</div>
                                     <div className='text-[1rem] flex items-center'>XPERIENCE</div>
                                 </div>
-                                <ExperienceForm />
+                                <ExperienceForm submit={submitExp}/>
                                 <AddSection text="+ Experience" id="addExp" add={() => Popup('addExp', 'expForm')}/>
                             </div>
 
