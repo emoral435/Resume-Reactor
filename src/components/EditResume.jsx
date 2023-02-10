@@ -6,42 +6,112 @@ import EducationForm from './EducationForm';
 import { eduInfo, eduFactory } from '../funfunfunctions/educationInfo';
 import LoadingInfo from './LoadingInfo';
 import TechForm from './TechForm';
-import submitTech from '../funfunfunctions/submitTech';
-import deleteTech from '../funfunfunctions/deleteTech';
 import ExperienceForm from './experienceForm';
 import Popup from '../funfunfunctions/FormPopup';
 import { expFactory, expInfo } from '../funfunfunctions/experienceInfo';
 import CancelExp from '../funfunfunctions/CancelExp';
+import addFN from '../funfunfunctions/hideEduAdd';
+import ProjectForm from './ProjectsForm';
+import { projectFactory, projectInfo } from '../funfunfunctions/projectInfo';
+import CancelPro from '../funfunfunctions/CancelProjects';
+import { techSkills, techFactory } from '../funfunfunctions/techSkills';
 class EditResume extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            numEdu : eduInfo.length
+            numEdu : eduInfo.length,
+            numExp: expInfo.length,
+            numPro: projectInfo.length,
+            numSkills : techSkills.length / 4
         }
     }
 
     render() {
+
         let deleteEduInfo = (e) => {
             let target = e.target.parentNode
-            eduInfo.splice(target.dataset.schools, 1)
+            eduInfo.splice(target.dataset.position, 1)
             this.setState({
-                numEdu: this.state.numEdu - 1
+                numEdu: this.state.numEdu - 1,
+                numExp: this.state.numExp,
+                numPro: this.state.numPro,
+                numSkills: this.state.numSkills
             })
         }
-        const eduArray = []
         
-        for (let i = 0; i < this.state.numEdu; i++) {
-            eduArray.push(<LoadingInfo deleteInfo={deleteEduInfo} text={eduInfo[i].uni} dataSchools={i} key={i} number={i} />)
+        let deleteExpInfo = (e) => {
+            let target = e.target.parentNode
+            expInfo.splice(parseInt(target.dataset.position), 1)
+            this.setState({
+                numEdu: this.state.numEdu,
+                numExp: this.state.numExp - 1,
+                numPro: this.state.numPro,
+                numSkills: this.state.numSkills
+            })
+        }
+        
+        let deleteProInfo = (e) => {
+            let target = e.target.parentNode
+            projectInfo.splice(parseInt(target.dataset.position), 1)
+            this.setState({
+                numEdu: this.state.numEdu,
+                numExp: this.state.numExp,
+                numPro: this.state.numPro - 1,
+                numSkills: this.state.numSkills
+            })
         }
 
-
-
+        let deleteTech = () => {
+            techSkills.splice(0, techSkills.length)
+            let loadedTech = document.getElementById('loaded-tech-skills')
+            loadedTech.classList.add('hidden')
+            this.setState({
+                numEdu: this.state.numEdu,
+                numExp: this.state.numExp,
+                numPro: this.state.numPro,
+                numSkills: this.state.numSkills - 1
+            })
+        }
         
-        let addFN = () => {
-            let education = document.getElementById('addEducation')
-            education.classList.add('hidden')
-            let form = document.getElementById('eduForm')
-            form.classList.remove('hidden')
+        const expArray = []
+        const eduArray = []
+        const proArray = []
+        const techArray = []
+        
+        for (let i = 0; i < this.state.numEdu; i++) {
+            eduArray.push(<LoadingInfo deleteInfo={deleteEduInfo} text={eduInfo[i].uni} dataPosition={i} key={i} number={i} />)
+        }
+        
+        for (let i = 0; i < this.state.numExp; i++) {
+            expArray.push(<LoadingInfo deleteInfo={deleteExpInfo} text={expInfo[i].jobTitle} dataPosition={i} key={i} />)
+        }
+        
+        for (let i = 0; i < this.state.numPro; i++) {
+            proArray.push(<LoadingInfo deleteInfo={deleteProInfo} text={projectInfo[i].projectTitle} dataPosition={i} key={i} />)
+        }
+        
+        for (let i = 0; i < this.state.numSkills; i++) {
+            techArray.push(<LoadingInfo text='Tech Skills' id='loaded-tech-skills' deleteInfo={deleteTech} key={i}/>)
+        }
+        
+        let submitTech = () => {
+            const lang = document.getElementById('languages')
+            const frameworks = document.getElementById('frameworks')
+            const tools = document.getElementById('developer-tools')
+            const libraries = document.getElementById('libraries')
+            const loopArray = [lang, frameworks, tools, libraries]
+            for (let i = 0; i < loopArray.length; i++) {
+                techSkills[i] = techFactory(loopArray[i].id, loopArray[i].value)
+                loopArray[i].value = ''
+            }
+            let techForm = document.getElementById('techForm')
+            techForm.classList.add('hidden')
+            this.setState({
+                numEdu: this.state.numEdu,
+                numExp: this.state.numExp,
+                numPro: this.state.numPro,
+                numSkills: this.state.numSkills + 1
+            })
         }
         
         let submitEdu = () => {
@@ -60,7 +130,10 @@ class EditResume extends Component {
                 let form = document.getElementById('eduForm')
                 form.classList.add('hidden')
                 this.setState({
-                    numEdu: this.state.numEdu + 1
+                    numEdu: this.state.numEdu,
+                    numExp: this.state.numExp,
+                    numPro: this.state.numPro,
+                    numSkills: this.state.numSkills + 1
                 })
             }
         }
@@ -70,9 +143,36 @@ class EditResume extends Component {
             document.querySelectorAll('[data-bullet-points]').forEach ( node => {
                 bulletValues.push(node.value)
             })
-            expInfo.push(expFactory(document.getElementById('job-title'), document.getElementById('date-worked'), document.getElementById('company'), document.getElementById('location-experience'), bulletValues))
+            expInfo.push(expFactory(document.getElementById('job-title').value, document.getElementById('date-worked').value, document.getElementById('company').value, document.getElementById('location-experience').value, bulletValues))
             CancelExp()
-            console.log(expInfo)
+            this.setState({
+                numEdu: this.state.numEdu,
+                numExp: this.state.numExp + 1,
+                numPro: this.state.numPro,
+                numSkills: this.state.numSkills
+            })
+        }
+
+        let submitPro = () => {
+            console.log('hahaha')
+            const bulletValues = []
+            document.querySelectorAll('[data-bullet-points]').forEach ( node => {
+                bulletValues.push(node.value)
+            })
+            projectInfo.push(projectFactory(document.getElementById('project-title').value, document.getElementById('stack-used').value, document.getElementById('company').value, bulletValues))
+            CancelPro()
+            this.setState({
+                numEdu: this.state.numEdu,
+                numExp: this.state.numExp,
+                numPro: this.state.numPro + 1,
+                numSkills: this.state.numSkills
+            })
+        }
+
+        const renderTech = () => {
+            if (this.state.numSkills === 0) {
+                return <AddSection type="button" text="+ Technical Skill" add={() => Popup('addTech', 'techForm')} id='addTech'/>
+            } else return <div></div>
         }
 
         return (
@@ -118,6 +218,9 @@ class EditResume extends Component {
                                     <div className='text-[1.4rem]'>E</div>
                                     <div className='text-[1rem] flex items-center'>XPERIENCE</div>
                                 </div>
+                                <div>
+                                    {expArray}
+                                </div>
                                 <ExperienceForm submit={submitExp}/>
                                 <AddSection text="+ Experience" id="addExp" add={() => Popup('addExp', 'expForm')}/>
                             </div>
@@ -128,7 +231,11 @@ class EditResume extends Component {
                                     <div className='text-[1.4rem]'>P</div>
                                     <div className='text-[1rem] flex items-center'>ROJECTS</div>
                                 </div>
-                                <AddSection text="+ Projects" />
+                                <div>
+                                    {proArray}
+                                </div>
+                                <ProjectForm submit={submitPro}/>
+                                <AddSection text="+ Projects" id="addProjects" add={() => Popup('addProjects', 'proForm')} />
                             </div>
 
                             {/* this is the techinical skills of the resume */}
@@ -139,9 +246,11 @@ class EditResume extends Component {
                                     <div className='text-[1.4rem]'>S</div>
                                     <div className='text-[1rem] flex items-center'>KILLS</div>
                                 </div>
-                                <LoadingInfo text='Tech Skills' hide='hidden' id='loaded-tech-skills' deleteInfo={deleteTech}/>
-                                <TechForm submitTech={submitTech}/>
-                                <AddSection type="button" text="+ Technical Skill" add={() => Popup('addTech', 'techForm')} id='addTech'/>
+                                <div>
+                                    {techArray}
+                                </div>
+                                <TechForm submitTech={submitTech} key={0}/>
+                                {renderTech()}
                             </div>
                         </div>
                     </div>
