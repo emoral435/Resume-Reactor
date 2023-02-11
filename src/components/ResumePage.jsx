@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import EditResume from './EditResume';
+import PreviewResume from './PreviewResume';
+import { headerInfo } from '../funfunfunctions/headerInfo';
 
 class ResumePage extends Component {
     constructor(props) {
@@ -16,7 +18,7 @@ class ResumePage extends Component {
                         this.props.currState && <EditResume />
                     }
                     {
-                        this.props.currState && <div></div>
+                        !this.props.currState && <PreviewResume />
                     }
                 </div>
             </div>

@@ -15,6 +15,7 @@ import ProjectForm from './ProjectsForm';
 import { projectFactory, projectInfo } from '../funfunfunctions/projectInfo';
 import CancelPro from '../funfunfunctions/CancelProjects';
 import { techSkills, techFactory } from '../funfunfunctions/techSkills';
+import { headerInfo } from '../funfunfunctions/headerInfo';
 class EditResume extends Component {
     constructor(props) {
         super(props);
@@ -130,10 +131,10 @@ class EditResume extends Component {
                 let form = document.getElementById('eduForm')
                 form.classList.add('hidden')
                 this.setState({
-                    numEdu: this.state.numEdu,
+                    numEdu: this.state.numEdu  + 1,
                     numExp: this.state.numExp,
                     numPro: this.state.numPro,
-                    numSkills: this.state.numSkills + 1
+                    numSkills: this.state.numSkills
                 })
             }
         }
@@ -179,8 +180,8 @@ class EditResume extends Component {
             <div className='h-full w-full'>
                     {/* this area will contain the header part of the resume */}
                     <div className="flex gap-2 justify-center font-[CMUSerifRoman] mt-2">
-                        <NameInput nameValue={this.props.firstName} placeholder="Jake..." height="max-h-min" id="first-name" text="text-7xl" />
-                        <NameInput nameValue={this.props.lastName} placeholder="Ryan..." height="max-h-min" id="last-time" text="text-7xl" />
+                        <NameInput value={this.props.firstName} placeholder="Jake..." height="max-h-min" id="first-name" text="text-7xl" />
+                        <NameInput value={this.props.lastName} placeholder="Ryan..." height="max-h-min" id="last-name" text="text-7xl" />
                     </div>
 
                     {/* this area has the link inputs */}

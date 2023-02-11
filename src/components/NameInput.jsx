@@ -23,7 +23,7 @@ class NameInput extends Component {
             }
           }
         return (
-            <input value={this.props.nameValue} type="text" className={'outline-none w-56 ' + this.props.height + " " + this.props.text} autoComplete="off" id={this.props.id} placeholder={this.props.placeholder} data-name onChange={onChange}/>
+            <input value={this.props.value} type="text" className={'outline-none w-56 ' + this.props.height + " " + this.props.text} autoComplete="on" id={this.props.id} placeholder={this.props.placeholder} data-name onChange={onChange}/>
         )
     }
 }

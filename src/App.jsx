@@ -1,6 +1,7 @@
 import React, { Component} from 'react'
 import ETP from './components/EditToPreview'
 import ResumePage from './components/ResumePage'
+import { headerInfo, linkFactory, nameFactory } from './funfunfunctions/headerInfo'
 
 class App extends Component {
   constructor(props) {
@@ -13,8 +14,16 @@ class App extends Component {
 
   changeResumeMode(e) {
     if (e.target.parentNode.id == 'edit-btn') {
-        this.setState({editMode: true})
+      this.setState({editMode: true})
     } else {
+        if (this.state.editMode == true) {
+          while (headerInfo.length > 0) {
+            headerInfo.pop()
+          }
+          let linkArray = [] 
+          document.querySelectorAll('[data-links').forEach( input => linkArray.push(input.value))
+          headerInfo.push(nameFactory(document.getElementById('first-name').value, document.getElementById('last-name').value), linkFactory(linkArray))
+        }
         this.setState({editMode: false})
     }
   }

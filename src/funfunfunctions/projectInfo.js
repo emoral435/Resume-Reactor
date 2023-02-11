@@ -1,6 +1,6 @@
 let projectInfo = []
 
-let projectFactory = (projectTitle, stack, bulletPoints) => {
+let projectFactory = (projectTitle = "", stack = "", bulletPoints = []) => {
     return {
         projectTitle,
         stack,

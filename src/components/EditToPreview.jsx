@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import PreviewBtn from './PreviewBtn';
 import EditBtn from './EditBtn';
-import EditResume from './EditResume';
 
 class ETP extends Component {
     constructor(props) {
