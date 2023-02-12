@@ -16,14 +16,14 @@ export default class LoadExperience extends Component {
         return (
             <div className="flex flex-col">
                 <div className="flex justify-between">
-                    <div>{this.props.job}</div>
+                    <div className="font-bold">{this.props.job}</div>
                     <div>{this.props.date}</div>
                 </div>
                 <div className="flex justify-between">
-                    <div>{this.props.company}</div>
-                    <div>{this.props.location}</div>
+                    <div className="italic">{this.props.company}</div>
+                    <div className="italic">{this.props.location}</div>
                 </div>
-                <div>
+                <div className="mx-4">
                     {loadedBullets}
                 </div>
             </div>

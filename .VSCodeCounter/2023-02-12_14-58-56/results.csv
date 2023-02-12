@@ -1,0 +1,55 @@
+"filename", "language", "JavaScript JSX", "JavaScript", "JSON", "XML", "CSS", "HTML", "Markdown", "comment", "blank", "total"
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 14, 0, 11, 25
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/index.html", "HTML", 0, 0, 0, 0, 0, 16, 0, 0, 1, 17
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/package-lock.json", "JSON", 0, 0, 3459, 0, 0, 0, 0, 0, 1, 3460
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/package.json", "JSON", 0, 0, 24, 0, 0, 0, 0, 0, 1, 25
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/postcss.config.cjs", "JavaScript", 0, 6, 0, 0, 0, 0, 0, 0, 1, 7
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/public/barrel-nuclear-svgrepo-com.svg", "XML", 0, 0, 0, 54, 0, 0, 0, 1, 0, 55
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/public/nuclear-svgrepo-com.svg", "XML", 0, 0, 0, 25, 0, 0, 0, 1, 0, 26
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/App.jsx", "JavaScript JSX", 41, 0, 0, 0, 0, 0, 0, 3, 5, 49
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/BulletPoint.jsx", "JavaScript JSX", 14, 0, 0, 0, 0, 0, 0, 0, 3, 17
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/CancelButton.jsx", "JavaScript JSX", 15, 0, 0, 0, 0, 0, 0, 0, 4, 19
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/DynamicExperiencePts.jsx", "JavaScript JSX", 12, 0, 0, 0, 0, 0, 0, 4, 4, 20
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/EditBtn.jsx", "JavaScript JSX", 15, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/EditResume.jsx", "JavaScript JSX", 236, 0, 0, 0, 0, 0, 0, 6, 24, 266
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/EditToPreview.jsx", "JavaScript JSX", 18, 0, 0, 0, 0, 0, 0, 0, 4, 22
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/EducationForm.jsx", "JavaScript JSX", 40, 0, 0, 0, 0, 0, 0, 0, 4, 44
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/EducationPreview.jsx", "JavaScript JSX", 19, 0, 0, 0, 0, 0, 0, 0, 4, 23
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/ExperiencePreview.jsx", "JavaScript JSX", 19, 0, 0, 0, 0, 0, 0, 0, 5, 24
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/HeaderPreview.jsx", "JavaScript JSX", 31, 0, 0, 0, 0, 0, 0, 0, 3, 34
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LinkInputs.jsx", "JavaScript JSX", 25, 0, 0, 0, 0, 0, 0, 1, 5, 31
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LoadBulletPoint.jsx", "JavaScript JSX", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LoadEducation.jsx", "JavaScript JSX", 20, 0, 0, 0, 0, 0, 0, 0, 2, 22
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LoadExperience.jsx", "JavaScript JSX", 28, 0, 0, 0, 0, 0, 0, 0, 4, 32
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LoadProject.jsx", "JavaScript JSX", 25, 0, 0, 0, 0, 0, 0, 0, 5, 30
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LoadTechSkills.jsx", "JavaScript JSX", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/LoadingInfo.jsx", "JavaScript JSX", 15, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/NameInput.jsx", "JavaScript JSX", 25, 0, 0, 0, 0, 0, 0, 1, 5, 31
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/PreviewBtn.jsx", "JavaScript JSX", 15, 0, 0, 0, 0, 0, 0, 0, 5, 20
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/PreviewResume.jsx", "JavaScript JSX", 41, 0, 0, 0, 0, 0, 0, 0, 3, 44
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/ProjectPreview.jsx", "JavaScript JSX", 19, 0, 0, 0, 0, 0, 0, 0, 5, 24
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/ProjectsForm.jsx", "JavaScript JSX", 50, 0, 0, 0, 0, 0, 0, 0, 6, 56
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/ResumePage.jsx", "JavaScript JSX", 24, 0, 0, 0, 0, 0, 0, 0, 5, 29
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/TechForm.jsx", "JavaScript JSX", 36, 0, 0, 0, 0, 0, 0, 0, 5, 41
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/TechPreview.jsx", "JavaScript JSX", 21, 0, 0, 0, 0, 0, 0, 0, 5, 26
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/addSection.jsx", "JavaScript JSX", 15, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/components/experienceForm.jsx", "JavaScript JSX", 59, 0, 0, 0, 0, 0, 0, 0, 5, 64
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/CancelEdu.js", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 0, 0, 10
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/CancelExp.js", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 0, 3, 13
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/CancelProjects.js", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 0, 3, 13
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/CancelTech.js", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 0, 0, 10
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/FormPopup.js", "JavaScript", 0, 6, 0, 0, 0, 0, 0, 0, 0, 6
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/deleteTech.js", "JavaScript", 0, 8, 0, 0, 0, 0, 0, 0, 1, 9
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/educationInfo.js", "JavaScript", 0, 13, 0, 0, 0, 0, 0, 1, 3, 17
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/experienceInfo.js", "JavaScript", 0, 14, 0, 0, 0, 0, 0, 1, 3, 18
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/headerInfo.js", "JavaScript", 0, 14, 0, 0, 0, 0, 0, 0, 4, 18
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/hideEduAdd.js", "JavaScript", 0, 6, 0, 0, 0, 0, 0, 0, 1, 7
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/killChildren.js", "JavaScript", 0, 5, 0, 0, 0, 0, 0, 0, 0, 5
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/projectInfo.js", "JavaScript", 0, 12, 0, 0, 0, 0, 0, 0, 2, 14
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/techSkills.js", "JavaScript", 0, 13, 0, 0, 0, 0, 0, 0, 2, 15
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/funfunfunctions/toggleEPColor.js", "JavaScript", 0, 12, 0, 0, 0, 0, 0, 1, 0, 13
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/index.css", "CSS", 0, 0, 0, 0, 6, 0, 0, 0, 2, 8
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/src/main.jsx", "JavaScript JSX", 9, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/tailwind.config.cjs", "JavaScript", 0, 10, 0, 0, 0, 0, 0, 1, 1, 12
+"/Users/eduardomorales/Desktop/Projects/CV-Creator/vite.config.js", "JavaScript", 0, 5, 0, 0, 0, 0, 0, 1, 2, 8
+"Total", "-", 912, 164, 3483, 79, 6, 16, 14, 22, 177, 4873

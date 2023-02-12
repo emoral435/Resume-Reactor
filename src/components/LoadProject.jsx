@@ -21,7 +21,7 @@ export default class LoadProject extends Component {
                     <div> | </div>
                     <div className='italic'>{this.props.stack}</div>
                 </div>
-                <div>
+                <div className='mx-4'>
                     {loadedBullets}
                 </div>
             </div>

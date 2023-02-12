@@ -9,12 +9,12 @@ export default class LoadEducation extends Component {
         return (
             <div className="flex flex-col">
                 <div className="flex justify-between">
-                    <div>{this.props.school}</div>
+                    <div className="font-bold">{this.props.school}</div>
                     <div>{this.props.location}</div>
                 </div>
                 <div className="flex justify-between">
-                    <div>{this.props.degree}</div>
-                    <div>{this.props.date}</div>
+                    <div className="italic">{this.props.degree}</div>
+                    <div className="italic">{this.props.date}</div>
                 </div>
             </div>
         )

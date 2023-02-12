@@ -18,7 +18,7 @@ export default class TechnicalPreview extends Component {
         }
 
         return (
-            <div className='flex flex-col gap-4 mx-2'>
+            <div className='flex flex-col gap-2 mx-4'>
                 {loadedArray}
             </div>
         )

@@ -16,7 +16,7 @@ export default class ExperiencePreview extends Component {
         }
 
         return (
-            <div>
+            <div className='mx-4'>
                 {loadedArray}
             </div>
         )
