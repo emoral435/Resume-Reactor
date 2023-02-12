@@ -94,6 +94,10 @@ class EditResume extends Component {
         for (let i = 0; i < this.state.numSkills; i++) {
             techArray.push(<LoadingInfo text='Tech Skills' id='loaded-tech-skills' deleteInfo={deleteTech} key={i}/>)
         }
+
+        let capitalize = (string) => {
+            return string.charAt(0).toUpperCase() + string.slice(1)
+        }
         
         let submitTech = () => {
             const lang = document.getElementById('languages')
@@ -102,7 +106,7 @@ class EditResume extends Component {
             const libraries = document.getElementById('libraries')
             const loopArray = [lang, frameworks, tools, libraries]
             for (let i = 0; i < loopArray.length; i++) {
-                techSkills[i] = techFactory(loopArray[i].id, loopArray[i].value)
+                techSkills[i] = techFactory(capitalize(loopArray[i].id), loopArray[i].value)
                 loopArray[i].value = ''
             }
             let techForm = document.getElementById('techForm')
@@ -155,12 +159,11 @@ class EditResume extends Component {
         }
 
         let submitPro = () => {
-            console.log('hahaha')
             const bulletValues = []
             document.querySelectorAll('[data-bullet-points]').forEach ( node => {
                 bulletValues.push(node.value)
             })
-            projectInfo.push(projectFactory(document.getElementById('project-title').value, document.getElementById('stack-used').value, document.getElementById('company').value, bulletValues))
+            projectInfo.push(projectFactory(document.getElementById('project-title').value, document.getElementById('stack-used').value, bulletValues))
             CancelPro()
             this.setState({
                 numEdu: this.state.numEdu,

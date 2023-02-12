@@ -12,7 +12,7 @@ export default class ExperiencePreview extends Component {
         let loadedArray = []
         
         for (let i = 0; i < expInfo.length; i++) {
-            loadedArray.push(<LoadExperience job={expInfo[i].jobTitle} date={expInfo[i].dateWorked} company={expInfo[i].company} location={expInfo[i].area} bullets={expInfo[i].bullets}/>)
+            loadedArray.push(<LoadExperience key={i + "experience"} job={expInfo[i].jobTitle} date={expInfo[i].dateWorked} company={expInfo[i].company} location={expInfo[i].area} bullets={expInfo[i].bullets}/>)
         }
 
         return (
