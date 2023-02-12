@@ -7,7 +7,7 @@ export default class LoadEducation extends Component {
 
     render() {
         return (
-            <div className="flex flex-col">
+            <div className="flex flex-col mx-4">
                 <div className="flex justify-between">
                     <div className="font-bold">{this.props.school}</div>
                     <div>{this.props.location}</div>
